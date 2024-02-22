@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Students list{% endblock %}
+
+{% block header %}Student List{% endblock %}
+
+{% block content %}
+    <table class="student">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Student</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+            {% for advise in adviser %}
+                <tr>
+                    <td>{{advise.name }}</td>
+                    <td>{{advise.student.name}}</td>
+                    <td>{{advise.thesis.title}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Students list{% endblock %}
+
+{% block header %}Student List{% endblock %}
+
+{% block content %}
+    <table class="student">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Body</th>
+                <th>Publish Date</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Student Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Thesis in thesis %}
+                <tr>
+                    <td>{{ Thesis.title }}</td>
+                    <td>{{ Thesis.author }}</td>
+                    <td>{{ Thesis.body }}</td>
+                    <td>{{ Thesis.publish }}</td>
+                    <td>{{ Thesis.created_at }}</td>
+                    <td>{{ Thesis.updated_at}}</td>
+                    <td>{{ Thesis.student.name}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
